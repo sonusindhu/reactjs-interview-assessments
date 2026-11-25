@@ -27,6 +27,11 @@ function App() {
                 React Accordion
               </Link>
             </li>
+            <li>
+              <Link to="/autocomplete" className="example-link">
+                React Autocomplete
+              </Link>
+            </li>
           </ul>
 
         </div>

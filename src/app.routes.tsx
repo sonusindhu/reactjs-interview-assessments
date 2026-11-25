@@ -9,5 +9,9 @@ export const router = createBrowserRouter([
   {
     path: 'accordion',
     lazy: () => import('./pages/AccordionPage').then(module => ({ Component: module.default })),
-  }
+  },
+  {
+    path: 'autocomplete',
+    lazy: () => import('./pages/AutocompletePage').then(module => ({ Component: module.default })),
+  },
 ]);
