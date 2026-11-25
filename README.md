@@ -1,78 +1,116 @@
-# React + TypeScript + Vite
+# React.js Interview Assessments
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A curated React and TypeScript assessment workspace demonstrating how to build reusable UI components for frontend technical interviews.
 
-Currently, two official plugins are available:
+The repository focuses on the complete engineering process: component API design, state management, accessibility, async request handling, keyboard interaction, performance, testing considerations, and implementation trade-offs.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Assessment Overview
 
-## React Compiler
+| Assessment | Primary Concepts | Component Guide |
+| --- | --- | --- |
+| Accordion | Compound components, Context, immutable state, ARIA, single/multiple modes | [Open guide](src/components/accordion/README.md) |
+| Autocomplete | Debouncing, fetch cancellation, race conditions, keyboard navigation, combobox accessibility | [Open guide](src/components/autocomplete/README.md) |
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Interview Learning Path
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+The assessments are ordered by the core React concepts typically explored in interviews:
 
-## Expanding the ESLint configuration
+1. **API design** — Create clear, reusable props and predictable component behavior.
+2. **State modeling** — Choose the correct state shape and update strategy.
+3. **Composition** — Prefer composable components and Context over prop drilling.
+4. **Accessibility** — Support keyboard, screen readers, focus, and ARIA relationships.
+5. **Asynchronous behavior** — Debounce input, cancel stale requests, and prevent race conditions.
+6. **Testing** — Verify state transitions, DOM behavior, async lifecycle, and accessibility attributes.
+7. **Trade-offs** — Explain controlled versus uncontrolled APIs and the cost of implementation choices.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Live Examples
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+| Route | Example |
+| --- | --- |
+| `/` | Project overview and assessment navigation |
+| `/accordion` | Single-open and multiple-open accordion examples |
+| `/autocomplete` | Debounced user search with loading, error, and no-results states |
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Architecture
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```text
+src/
+├── components/
+│   ├── accordion/
+│   │   ├── Accordion.tsx       # Shared state and Context provider
+│   │   ├── AccordionItem.tsx   # Trigger and expandable panel
+│   │   ├── Accordion.css
+│   │   ├── types.ts
+│   │   └── README.md
+│   └── autocomplete/
+│       ├── Autocomplete.tsx    # Combobox UI and interactions
+│       ├── useDebouncedValue.ts
+│       ├── useUsersSearch.ts
+│       ├── userService.ts
+│       ├── types.ts
+│       └── README.md
+├── pages/
+│   ├── AccordionPage.tsx
+│   └── AutocompletePage.tsx
+├── App.tsx                     # Assessment landing page
+├── app.routes.tsx              # Route definitions
+└── main.tsx                    # React application entry point
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Suggested Next Improvements
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- Add Vitest and React Testing Library.
+- Add Playwright or Cypress browser tests.
+- Support controlled and uncontrolled component modes.
+- Add result caching and request deduplication.
+- Virtualize large autocomplete result sets.
+- Introduce Storybook or interactive component documentation.
+- Add skeleton or shimmer loading states.
+- Improve reduced-motion support.
+- Add unique accordion ID validation in development.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Getting Started
 
+### Prerequisites
+
+- Node.js 20 or newer
+- npm
+
+### Install dependencies
+
+```bash
+npm install
 ```
+
+### Start development server
+
+```bash
+npm run dev
+```
+
+Open the URL printed by Vite in your browser.
+
+### Create a production build
+
+```bash
+npm run build
+```
+
+### Preview the production build
+
+```bash
+npm run preview
+```
+
+### Run lint checks
+
+```bash
+npm run lint
+```
+
+## Author
+
+Created by Sonu Sindhu:
+
+- [GitHub](https://github.com/sonusindhu)
+- [X / Twitter](https://x.com/sonusindhu10)
