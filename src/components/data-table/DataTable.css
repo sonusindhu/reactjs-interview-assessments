@@ -1,0 +1,146 @@
+.data-table-container {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.data-table-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.data-table-toolbar input,
+.data-table-toolbar select,
+.column-filter {
+  padding: 9px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.data-table-toolbar input {
+  flex: 1;
+  max-width: 320px;
+}
+
+.data-table-selection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  margin-bottom: 12px;
+  background: #eff6ff;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.data-table-selection button {
+  border: none;
+  background: transparent;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+.data-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.data-table th {
+  background: #f9fafb;
+  font-weight: 600;
+  vertical-align: top;
+}
+
+.data-table-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sort-button {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.column-filter {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  font-weight: normal;
+}
+
+.data-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.data-table tbody tr.selected-row {
+  background: #eff6ff;
+}
+
+.data-table input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.table-message {
+  padding: 36px;
+  text-align: center;
+  color: #6b7280;
+}
+
+.data-table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+}
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .data-table-toolbar,
+  .data-table-footer {
+    flex-wrap: wrap;
+  }
+
+  .data-table-toolbar input {
+    max-width: none;
+  }
+}

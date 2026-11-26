@@ -32,6 +32,11 @@ function App() {
                 React Autocomplete
               </Link>
             </li>
+            <li>
+              <Link to="/data-table" className="example-link">
+                React Data Table
+              </Link>
+            </li>
           </ul>
 
         </div>
