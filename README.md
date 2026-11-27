@@ -10,6 +10,7 @@ The repository focuses on the complete engineering process: component API design
 | --- | --- | --- |
 | Accordion | Compound components, Context, immutable state, ARIA, single/multiple modes | [Open guide](src/components/accordion/README.md) |
 | Autocomplete | Debouncing, fetch cancellation, race conditions, keyboard navigation, combobox accessibility | [Open guide](src/components/autocomplete/README.md) |
+| Todo | Reducers, custom hooks, derived state, persistence, filtering, search, and editing | [Open guide](src/components/todos/README.md) |
 
 ## Interview Learning Path
 
@@ -30,6 +31,7 @@ The assessments are ordered by the core React concepts typically explored in int
 | `/` | Project overview and assessment navigation |
 | `/accordion` | Single-open and multiple-open accordion examples |
 | `/autocomplete` | Debounced user search with loading, error, and no-results states |
+| `/todos` | Todo list with search, filter, and edit functionalities |
 
 ## Architecture
 
@@ -42,16 +44,27 @@ src/
 │   │   ├── Accordion.css
 │   │   ├── types.ts
 │   │   └── README.md
-│   └── autocomplete/
-│       ├── Autocomplete.tsx    # Combobox UI and interactions
-│       ├── useDebouncedValue.ts
-│       ├── useUsersSearch.ts
-│       ├── userService.ts
+│   ├── autocomplete/
+│   │   ├── Autocomplete.tsx    # Combobox UI and interactions
+│   │   ├── useDebouncedValue.ts
+│   │   ├── useUsersSearch.ts
+│   │   ├── userService.ts
+│   │   ├── types.ts
+│   │   └── README.md
+│   └── todos/
+│       ├── TodoForm.tsx        # New-task form
+│       ├── TodoList.tsx        # Filtered todo list
+│       ├── TodoItem.tsx        # Completion, editing, and deletion
+│       ├── TodoFilters.tsx     # Status filters and clear action
+│       ├── TodoStats.tsx       # Derived todo counts
+│       ├── useTodos.ts         # Reducer-backed todo hook
+│       ├── todoStorage.ts      # Validated localStorage persistence
 │       ├── types.ts
 │       └── README.md
 ├── pages/
 │   ├── AccordionPage.tsx
-│   └── AutocompletePage.tsx
+│   ├── AutocompletePage.tsx
+│   └── TodoPage.tsx
 ├── App.tsx                     # Assessment landing page
 ├── app.routes.tsx              # Route definitions
 └── main.tsx                    # React application entry point
