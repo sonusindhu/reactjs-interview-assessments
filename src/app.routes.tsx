@@ -21,5 +21,9 @@ export const router = createBrowserRouter([
   {
     path: 'data-table',
     lazy: () => import('./pages/DataTablePage').then(module => ({ Component: module.default })),
+  },
+  {
+    path: 'todos',
+    lazy: () => import('./pages/TodoPage').then(module => ({ Component: module.default })),
   }
 ]);

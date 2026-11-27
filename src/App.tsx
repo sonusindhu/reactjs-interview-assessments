@@ -37,6 +37,11 @@ function App() {
                 React Data Table
               </Link>
             </li>
+            <li>
+              <Link to="/todos" className="example-link">
+                React Todos
+              </Link>
+            </li>
           </ul>
 
         </div>
